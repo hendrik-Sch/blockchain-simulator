@@ -54,7 +54,6 @@ Zum Starten muss zunächst die [node.js](https://nodejs.org/) Umgebung in der Ve
   ```
 
 ### <a name="configuration"></a>Konfiguration
-
 #### Server
 Ort der Konfigurationsdatei: `/server/config/dev.json`
 | Parameter | Bedeutung |
@@ -71,3 +70,6 @@ Ort der Konfigurationsdatei: `/client/public/config.json`
 | Parameter | Bedeutung |
 |---|---|
 | websocketUrl | URL zum Websocket der Server Anwendung |
+
+### Kontakt
+Bei Fragen wenden Sie sich bitte an Hendrik Schürmann schuermann11@googlemail.com.
