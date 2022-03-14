@@ -1,0 +1,4 @@
+{
+    "websocketUrl": "ws://localhost:9000",
+    "ip_websocketUrl": "ws://172.20.10.9:9000"
+}

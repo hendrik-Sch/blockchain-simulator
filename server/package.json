@@ -1,0 +1,21 @@
+{
+  "name": "blockchain-simulator-server",
+  "version": "0.0.1",
+  "description": "This application is used to simulate a blockchain for the 'Projektstudium' of the author.",
+  "main": "./src/index.js",
+  "author": "Hendrik Schürmann",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node dist/index.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.6.0"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "socket.io": "^4.4.1",
+    "uuid": "^8.3.2",
+    "ws": "^8.4.0"
+  }
+}

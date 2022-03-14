@@ -1,0 +1,32 @@
+[
+    {
+        "label": "Blockchain",
+        "link": "/blockchain",
+        "component": "Blockchain"
+    },
+    {
+        "label": "Moderator",
+        "link": "/moderator",
+        "component": "Moderator"
+    },
+    {
+        "label": "Endkunde",
+        "link": "/customer",
+        "component": "Customer"
+    },
+    {
+        "label": "Transportpartner",
+        "link": "/delivery",
+        "component": "Delivery"
+    },
+    {
+        "label": "Zulieferer",
+        "link": "/supplier",
+        "component": "Supplier"
+    },
+    {
+        "label": "Hersteller",
+        "link": "/manufacturer",
+        "component": "Manufacturer"
+    }
+]

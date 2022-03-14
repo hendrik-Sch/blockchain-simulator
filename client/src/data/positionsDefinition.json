@@ -1,0 +1,37 @@
+[
+    {
+        "short": "Z",
+        "description": "Zulieferer"
+    },
+    {
+        "short": "LKW",
+        "description": "Lastkraft Wagen",
+        "positions": [
+            {
+                "label": "1"
+            },
+            {
+                "label": "2"
+            }
+        ]
+    },
+    {
+        "short": "H",
+        "description": "Hersteller",
+        "positions": [
+            {
+                "label": "A1"
+            },
+            {
+                "label": "A2"
+            },
+            {
+                "label": "WA"
+            }
+        ]
+    },
+    {
+        "short": "E",
+        "description": "Endkunde"
+    }
+]
