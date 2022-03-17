@@ -40,6 +40,11 @@ function PositionsMenu(props) {
             anchorEl={anchorEl}
             open={menuOpen}
             onClose={onClose}
+            PaperProps={{
+                sx: {
+                    maxHeight: '70vh'
+                }
+            }}
         >
             {serialisedPositions.map((pos, index) => {
                 if (pos.divider) {
