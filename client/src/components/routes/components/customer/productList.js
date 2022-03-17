@@ -68,7 +68,7 @@ function ProductList(props) {
         <List>
             {products.map(block => (
                 <ListItem key={block.hash}
-                    secondaryAction={<ListButtons />}
+                    secondaryAction={<ListButtons block={block} />}
                 >
                     <ListItemIcon className={classes.icon}>
                         {block.data[PRODUCT_ID]}

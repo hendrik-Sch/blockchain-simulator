@@ -41,6 +41,26 @@ const SmartContracts = [
             role: "customer",
             message_renderer: (evtData) => `Lieferschein für Produkt "${Number(evtData.product_id)}" erhalten`
         }
+    },
+    {
+        trigger: {
+            type: "product evaluated",
+            isOkay: true
+        },
+        result: {
+            role: "customer",
+            message_renderer: (evtData) => `Rechnung für Produkt "${Number(evtData.product_id)}" erhalten`
+        }
+    },
+    {
+        trigger: {
+            type: "product evaluated",
+            isOkay: false
+        },
+        result: {
+            role: "manufacturer",
+            message_renderer: (evtData) => `Reklamation für Produkt "${Number(evtData.product_id)}" erhalten`
+        }
     }
 ];
 
@@ -91,6 +111,22 @@ function fillBlockchainWithInitialData(blockchain) {
     fillManufacturerInitialStock();
     fillManufacturerInitialStock();
     fillManufacturerInitialStock();
+};
+
+function GenerateSmartContractEvent(trigger) {
+    if (trigger.type === "position switch") {
+
+        return `${trigger.type} ${trigger.source} to ${trigger.target}`;
+    }
+
+    if (trigger.type === "product evaluated") {
+        if (trigger.isOkay === true) {
+
+            return `product accepted`;
+        }
+
+        return `product declined`;
+    }
 }
 
 (async () => {
@@ -186,10 +222,17 @@ function fillBlockchainWithInitialData(blockchain) {
             socket.emit('mails', mailbox.readMails());
         });
 
-        SmartContracts.forEach(contract => {
+        SmartContracts.forEach((contract, index) => {
             const { trigger, result } = contract;
 
-            const event = `${trigger.type} ${trigger.source} to ${trigger.target}`;
+            const event = GenerateSmartContractEvent(trigger);
+
+            if (!event) {
+                Logger.debug(`missconfigred smart contract at index: "${index}"`)
+
+                return;
+            }
+
             Logger.debug(`client ${client.id} registered smart contract on: ${event}`);
 
             socket.on(event, (eventData) => {
